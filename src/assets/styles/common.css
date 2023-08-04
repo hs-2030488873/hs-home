@@ -1,0 +1,126 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    line-height: 1.1;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: inherit;
+}
+
+button {
+    font-weight: 500;
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+button:hover {
+    border-color: #f1f1f1;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto transparent;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+    a:hover {
+        color: #fff;
+    }
+    button {
+        background-color: #f9f9f9;
+    }
+}
+
+/**
+  重置小圆点
+*/
+
+li {
+    list-style-type: none;
+}
+
+.common-btn__active {
+    background-color: #4ca2fe;
+    color: #fff;
+    transition: all 0.25s;
+}
+
+.common-pc-btn {
+    color: #fff;
+    line-height: 60px;
+    display: inline-block;
+    height: 60px;
+    padding: 0 15px;
+    background: linear-gradient(90deg, #03a9f4, #f441a6, #ffeb4b, #03a9f4);
+    background-size: 400%;
+    border-radius: 10px;
+    position: relative;
+}
+@keyframes btnBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 400% 0;
+    }
+}
+.common-pc-btn:hover {
+    animation: btnBackground 8s linear infinite;
+}
+.common-pc-btn:before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 1s;
+    background: linear-gradient(90deg, #03a9f4, #f441a6, #ffeb4b, #03a9f4);
+    background-size: 400%;
+    border-radius: 8px;
+}
+
+.common-pc-btn:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+}
